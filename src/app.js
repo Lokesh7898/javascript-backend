@@ -14,5 +14,11 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}))     //we use url en
 app.use(express.static("public"))       //we use this for if we want to store any files like pdf video images etc. then we use here public folder to store that data..
 app.use(cookieParser())
 
+// routes..
+import userRouter from './routes/user_routes.js';
+
+// routes declaration..
+app.use("/api/v1/users", userRouter);
+
 
 export default app
