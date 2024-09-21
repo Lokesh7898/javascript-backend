@@ -1,6 +1,6 @@
 import multer from "multer";
 
-const storage = multer.diskStorage({
+const storage = multer.diskStorage({        // diskstorage is used to save files on disk..
     destination: function (req, file, cb){
         cb(null, "./public/temp")
     },
@@ -11,4 +11,4 @@ const storage = multer.diskStorage({
     }
 })
 
-export const upload = multer.StorageEngine({ storage: storage })
+export const upload = multer({ storage: storage, limits: 1024*1024*5 }) // sets the limit for file size also using limits..
