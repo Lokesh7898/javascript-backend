@@ -7,7 +7,7 @@ const router = Router();
 router.route("/register").post(
     upload.fields([
         {
-            name: "avtar",
+            name: "avatar",
             maxCount: 1
         },
         {
@@ -17,9 +17,6 @@ router.route("/register").post(
     ]),
     registerUser
 )
-
-
-
 
 export default router
 
